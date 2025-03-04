@@ -15,6 +15,12 @@ return {
           fallbackFlags = {
             "-std=c++17",
             "--stdlib=libc++",
+            -- Linux Mac Paths
+            "-I/usr/include",
+            "-I/usr/include/c++/11", -- Adjust to match your GCC version
+            "-I/usr/lib/gcc/x86_64-linux-gnu/11/include", -- Adjust if needed
+            "-I/usr/local/include",
+            "-I/usr/include/x86_64-linux-gnu",
             -- Apple Silicon Mac paths
             "-I/opt/homebrew/opt/llvm/include/c++/v1",
             "-I/opt/homebrew/include",
