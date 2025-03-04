@@ -34,7 +34,8 @@ Your Neovim is now configured and ready to use!
 - Customize the configuration further by modifying files in `~/.config/nvim/`.
 
 ## 🎩 Credits
-Created with ❤️ by [ihsaan yasin](https://github.com/iyasinn).
+This configuration is built upon the excellent [LazyVim](https://www.lazyvim.org/), providing a modular and efficient setup.
+Mained by [ihsaan yasin](https://github.com/iyasinn) for my personal use.
 
 ---
 Happy coding! 🚀
