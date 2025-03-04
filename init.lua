@@ -1,0 +1,59 @@
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
+
+
+
+-- require("lspconfig").clangd.setup({
+--     cmd = {
+--         "clangd",
+--         "--background-index",
+--         "--clang-tidy",
+--         "--header-insertion=iwyu",
+--         "--completion-style=detailed",
+--         "--query-driver=/usr/bin/clang++,/opt/homebrew/bin/g++",
+--     },
+--     init_options = {
+--         fallbackFlags = {
+--             "-std=c++17",
+--             "--stdlib=libc++",
+--             "-I/Library/Developer/CommandLineTools/usr/include/c++/v1",
+--             "-I/Library/Developer/CommandLineTools/usr/lib/clang/14.0.3/include",
+--             "-I/Library/Developer/CommandLineTools/usr/include",
+--             "-I/System/Library/Frameworks",
+--             "-I/opt/homebrew/opt/llvm/include/c++/v1",
+--             "-I/opt/homebrew/include",
+--         }
+--     }
+-- })
+
+-- -- If you're using clangd_extensions, set it up after lspconfig
+-- require("clangd_extensions").setup({
+--     server = {
+--         -- The server settings will be merged with the ones above
+--         cmd = {
+--             "clangd",
+--             "--background-index",
+--             "--clang-tidy",
+--             "--header-insertion=iwyu",
+--             "--completion-style=detailed",
+--             "--query-driver=/usr/bin/clang++,/opt/homebrew/bin/g++",
+--         },
+--     },
+--     extensions = {
+--         -- Extension specific settings
+--         autoSetHints = true,
+--         inlay_hints = {
+--             inline = false,
+--         },
+--         ast = {
+--             role_icons = {
+--                 type = "🄣",
+--                 declaration = "📦",
+--                 expression = "🔧",
+--                 statement = ";",
+--                 specifier = "🔍",
+--                 ["template argument"] = "🔹",
+--             },
+--         },
+--     },
+-- })
