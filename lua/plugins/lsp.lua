@@ -1,21 +1,31 @@
+
+local function find_clangd()
+  local paths = { "/usr/bin/clangd", "/usr/local/bin/clangd", "/opt/llvm/bin/clangd" }
+  for _, path in ipairs(paths) do
+    if vim.fn.executable(path) == 1 then
+      return path
+    end
+  end
+  return "clangd" -- Fallback to system default
+end
+
 return {
   "neovim/nvim-lspconfig",
   opts = {
     servers = {
       clangd = {
         cmd = {
-          "clangd",
+          find_clangd(),
           "--background-index",
           "--clang-tidy",
           "--header-insertion=iwyu",
           "--completion-style=detailed",
-          "--query-driver=/usr/bin/clang++,/opt/homebrew/bin/g++",
+          -- "--query-driver=/usr/bin/clang++,/opt/homebrew/bin/g++",
         },
         init_options = {
           fallbackFlags = {
             "-std=c++17",
-            "--stdlib=libc++",
-            -- Linux Mac Paths
+            -- "--stdlib=libc++",
             "-I/usr/include",
             "-I/usr/include/c++/11", -- Adjust to match your GCC version
             "-I/usr/lib/gcc/x86_64-linux-gnu/11/include", -- Adjust if needed
